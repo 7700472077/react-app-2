@@ -20,11 +20,6 @@ jobs:
         with:
           node-version: "18.x"
 
-      # - name: Get npm cache directory
-      #   id: npm-cache-dir
-      #   run: |
-      #     echo "::set-output name=dir::$(npm config get cache)" # deprecated
-
       - name: Get npm cache directory
         id: npm-cache-dir
         shell: bash
