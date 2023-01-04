@@ -20,10 +20,15 @@ jobs:
         with:
           node-version: "18.x"
 
+      # - name: Get npm cache directory
+      #   id: npm-cache-dir
+      #   run: |
+      #     echo "::set-output name=dir::$(npm config get cache)" # deprecated
+
       - name: Get npm cache directory
         id: npm-cache-dir
-        run: |
-          echo "::set-output name=dir::$(npm config get cache)"
+        shell: bash
+        run: echo "dir=$(npm config get cache)" >> ${GITHUB_OUTPUT} ## nova forma de usar set-output
 
       - name: Cache Node Modules
         uses: actions/cache@v3
